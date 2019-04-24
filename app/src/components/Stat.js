@@ -19,7 +19,6 @@ componentDidMount(){
 	})
 	.then(data =>{
 		fetchedData = data
-		console.log(fetchedData)
 		fetchedData.map(player => addDatas.bind(this)(player))
 	})
 }
@@ -29,7 +28,7 @@ render() {
 		<div>
 		{"Stat.js"}
 		{console.log(this.props.players)}
-		<div><pre>{JSON.stringify(fetchedData, null, 2) }</pre></div>
+		<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
 		</div>
 	)
 }

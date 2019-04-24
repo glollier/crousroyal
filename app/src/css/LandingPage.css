@@ -4,30 +4,36 @@
 }
 
 html, body, #root, #root>div {
-	height: 100%
+	height: 100vh;
+	color: white;
 }
 .content {
 	overflow: hidden;
-	color: white;
 	font-family: Supercell-magic;
 	height:calc(100% - 100px);
-	background-image: url('https://pbs.twimg.com/media/CkSFmkGWgAQeKx_.jpg');
+	background-image: url('../img/bg-landing.png');
+	min-height:800px;
 }
 
 .content span {
-	text-shadow: 1px 1px 3px black;
 	margin: 10px;
+	font-size:1.2rem;
+	margin-bottom:80px;
 }
 
+.content span, h1, input[type="submit"], button, .tagCard button {
+	text-shadow: 2px 2px 0px #000000;
+}
 .header {
-	height:50px;
+	height:80px;
 	background-color: #f077f4;
-	box-shadow: 5px 1px 10px black;
+	box-shadow: 0px 0px 40px 1px black;
+	position:relative;
+	font-size:1.5rem;
 }
 
 .footer {
 	background-color: #282828;
-	color:white;
 	height:100px;
 	line-height: 100px;
 }
@@ -41,41 +47,39 @@ h1 {
 	font-family: Supercell-magic;
 	color: white;
 	font-size: 0.8em;
-	text-shadow: 1px 1px 3px black;
+	text-shadow: 2px 2px 0px #000000;
 	margin:0px;
 }
 
 h1 span {
 	color:#ffe16b;
 }
-
+input[type="submit"], input[type="text"]{
+	border:none;
+	height: 50px;
+	padding: 0px 20px;
+	color:white
+}
 input[type="text"] {
 	font-family: Supercell-magic;
-	border-radius: 0px;
-	border:none;
-	background-color: #1f2d61;
-	opacity:0.7;
-	height: 40px;
+	background-color: rgba(0, 0, 0, 0.31);
+	height: 50px;
 	width: 80%;
-	padding: 0px 20px;
-	color:white;
+}
+input[type="text"]::placeholder {
+	color: rgba(255, 255, 255, 0.13);
 }
 
 input[type="submit"] {
 	font-family: Supercell-magic;
-	border-radius: 0px;
-	border:none;
-	background-color: #33da5c;
-	height: 40px;
+	border-radius: 5px;
+	background-color: #43db68;
 	width: 150px;
-	padding: 0px 20px;
-	color:white;
-	margin: 20px;
+	margin-top: 50px;
 }
 
 input[type="submit"]:hover {
-	width:140px;
-	height: 35px;
+	background-color:#f077f4;
 }
 
 a.versus:link {
@@ -84,21 +88,25 @@ a.versus:link {
 button {
 	border-radius: 100%;
 	border: none;
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	background-color: #33da5c;
 	color:white;
-	box-shadow: 1px 1px 3px black;
 	margin: 20px 0px 0px 0px;
 }
 
 button:hover {
-	width: 35px;
-	height: 35px;
+	background-color:#f077f4;
+}
+
+input[type="submit"], button{
+	box-shadow: 2px 2px 1px #171717;
+	transition:background-color .3s ease;
 }
 
 .vs {
 	margin:10px;
+	text-shadow: 2px 2px 1px #171717;
 }
 
 .tagCard {
@@ -111,5 +119,7 @@ button:hover {
 	color:#ff2b68;
 	position:absolute;
 	top:15px;
-
+}
+.tagCard button:hover{
+	transform: scale(1.3) rotate(10deg);
 }
