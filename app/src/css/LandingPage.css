@@ -1,116 +1,115 @@
 @font-face {
-  font-family: 'Supercell-magic';
-  src: local('Supercell-magic-webfont'), url(../fonts/Supercell-magic-webfont.ttf) format('truetype');
+	font-family: 'Supercell-magic';
+	src: local('Supercell-magic-webfont'), url(../fonts/Supercell-magic-webfont.ttf) format('truetype');
 }
 
 html, body, #root, #root>div {
-  height: 100%
-}
-
-.header, .footer {
-  height:50px;
+	height: 100%
 }
 .content {
-  overflow: hidden;
-  color: white;
-  font-family: Supercell-magic;
-  height:calc(100% - 100px);
-  background-image: url('https://pbs.twimg.com/media/CkSFmkGWgAQeKx_.jpg');
+	overflow: hidden;
+	color: white;
+	font-family: Supercell-magic;
+	height:calc(100% - 100px);
+	background-image: url('https://pbs.twimg.com/media/CkSFmkGWgAQeKx_.jpg');
 }
 
 .content span {
-  text-shadow: 1px 1px 3px black;
-  margin: 10px;
+	text-shadow: 1px 1px 3px black;
+	margin: 10px;
 }
 
 .header {
-  background-color: #fc00f4;
-  box-shadow: 1px 1px 10px black;
+	height:50px;
+	background-color: #f077f4;
+	box-shadow: 5px 1px 10px black;
 }
 
 .footer {
-  background-color: #282828;
-  color:white;
+	background-color: #282828;
+	color:white;
+	height:100px;
+	line-height: 100px;
 }
 
 .footer span {
-  margin: 0px 3px;
-  color:#ff2b68;
+	margin: 0px 3px;
+	color:#ff2b68;
 }
 
 h1 {
-  font-family: Supercell-magic;
-  color: white;
-  font-size: 0.8em;
-  text-shadow: 1px 1px 3px black;
-  margin:0px;
+	font-family: Supercell-magic;
+	color: white;
+	font-size: 0.8em;
+	text-shadow: 1px 1px 3px black;
+	margin:0px;
 }
 
 h1 span {
-  color:#ffe16b;
+	color:#ffe16b;
 }
 
 input[type="text"] {
-  font-family: Supercell-magic;
-  border-radius: 0px;
-  border:none;
-  background-color: #1f2d61;
-  opacity:0.7;
-  height: 40px;
-  width: 80%;
-  padding: 0px 20px;
-  color:white;
+	font-family: Supercell-magic;
+	border-radius: 0px;
+	border:none;
+	background-color: #1f2d61;
+	opacity:0.7;
+	height: 40px;
+	width: 80%;
+	padding: 0px 20px;
+	color:white;
 }
 
 input[type="submit"] {
-  font-family: Supercell-magic;
-  border-radius: 0px;
-  border:none;
-  background-color: #33da5c;
-  height: 40px;
-  width: 150px;
-  padding: 0px 20px;
-  color:white;
-  margin: 20px;
+	font-family: Supercell-magic;
+	border-radius: 0px;
+	border:none;
+	background-color: #33da5c;
+	height: 40px;
+	width: 150px;
+	padding: 0px 20px;
+	color:white;
+	margin: 20px;
 }
 
 input[type="submit"]:hover {
-  width:140px;
-  height: 35px;
+	width:140px;
+	height: 35px;
 }
 
 a.versus:link {
-  text-decoration: none; }
+	text-decoration: none; }
 
 button {
-  border-radius: 100%;
-  border: none;
-  width: 40px;
-  height: 40px;
-  background-color: #33da5c;
-  color:white;
-  box-shadow: 1px 1px 3px black;
-  margin: 20px 0px 0px 0px;
+	border-radius: 100%;
+	border: none;
+	width: 40px;
+	height: 40px;
+	background-color: #33da5c;
+	color:white;
+	box-shadow: 1px 1px 3px black;
+	margin: 20px 0px 0px 0px;
 }
 
 button:hover {
-  width: 35px;
-  height: 35px;
+	width: 35px;
+	height: 35px;
 }
 
 .vs {
-  margin:10px;
+	margin:10px;
 }
 
 .tagCard {
-  position:relative;
+	position:relative;
 }
 
 .tagCard button {
-  box-shadow: none;
-  background-color: transparent;
-  color:#ff2b68;
-  position:absolute;
-  top:15px;
+	box-shadow: none;
+	background-color: transparent;
+	color:#ff2b68;
+	position:absolute;
+	top:15px;
 
 }
