@@ -1,5 +1,6 @@
 const initialState = {
   playerNumber: 1,
+  currentID: 1,
   players: [
     {
       key: 1,
@@ -14,11 +15,12 @@ function playerManager(state = initialState, action) {
       if(state.playerNumber < 4){
         return {
           ...state,
+          currentID: state.currentID + 1,
           playerNumber: state.playerNumber + 1,
           players: [
             ...state.players,
             {
-              key: state.playerNumber + 1,
+              key: state.currentID + 1,
               nameTag: ""
             }
           ]
@@ -26,11 +28,12 @@ function playerManager(state = initialState, action) {
       }
       return state
       case 'DELETE_PLAYER':
+        console.log(action.key)
         if(state.playerNumber > 1){
           return {
               ...state,
               playerNumber: state.playerNumber - 1,
-              players: state.players.filter( player => player.key !== state.playerNumber)
+              players: state.players.filter( player => player.key !== action.key)
             }
         }
         return state

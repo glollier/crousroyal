@@ -8,6 +8,7 @@ class AddPlayerTagList extends Component {
         <AddPlayerTagCard
           key={player.key}
           player={player}
+          removePlayer = { this.props.removePlayer }
           onChangeHandler = {this.props.onChangeHandler}
         />
       )

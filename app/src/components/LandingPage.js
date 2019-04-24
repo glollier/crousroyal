@@ -21,14 +21,14 @@ class LandingPage extends Component {
           <form className="text-center" onSubmit={(e) => {e.preventDefault(); }}>
             <AddPlayerTagList
               players={this.props.players}
+              removePlayer = { removePlayer.bind(this) }
               onChangeHandler = { onChangeHandler.bind(this) }
             />
             {console.log(this.props.players)}
             <AddPlayer
-              removePlayer = { removePlayer.bind(this) }
               addPlayer = { addPlayer.bind(this) }
             />
-            <Link to="/Stats">
+            <Link className="versus" to="/Stats">
               <input type="submit" name="nametag" value="Versus !" required />
             </Link>
           </form>

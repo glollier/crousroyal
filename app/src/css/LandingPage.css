@@ -48,7 +48,6 @@ h1 {
 
 h1 span {
   color:#ffe16b;
-
 }
 
 input[type="text"] {
@@ -76,8 +75,12 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  text-decoration: none;
+  width:140px;
+  height: 35px;
 }
+
+a.versus:link {
+  text-decoration: none; }
 
 button {
   border-radius: 100%;
@@ -95,6 +98,19 @@ button:hover {
   height: 35px;
 }
 
-.tagCard {
+.vs {
   margin:10px;
+}
+
+.tagCard {
+  position:relative;
+}
+
+.tagCard button {
+  box-shadow: none;
+  background-color: transparent;
+  color:#ff2b68;
+  position:absolute;
+  top:15px;
+
 }

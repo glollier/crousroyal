@@ -13,10 +13,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={Store}>
-      <Router>
-          <Route path="/" exact component={LandingPage} />
-          <Route path="/Stats" component={Stat} />
-      </Router>
+        <Router>
+            <Route path="/" exact component={LandingPage} />
+            <Route path="/Stats" component={Stat} />
+        </Router>
       </Provider>
     );
   }

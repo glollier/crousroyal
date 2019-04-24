@@ -5,8 +5,6 @@ class AddPlayer extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.removePlayer}>-</button>
-        {this.props.playerNumber}
         <button onClick={this.props.addPlayer}>+</button>
       </div>
     )
