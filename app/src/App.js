@@ -3,7 +3,7 @@ import LandingPage from './components/LandingPage';
 import Stat from './components/Stat';
 import { Provider } from 'react-redux'
 import Store from './store/configureStore'
-import './App.css';
+
 import {
   BrowserRouter as Router,
   Route,

@@ -4,27 +4,36 @@ import AddPlayerTagList from './vues/AddPlayerTagList';
 import {addPlayer, removePlayer, onChangeHandler} from '../actions/playerManager'
 import AddPlayer from './vues/AddPlayer';
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/LandingPage.css';
+import Header from './vues/Header'
+import Footer from './vues/Footer'
 
 class LandingPage extends Component {
   render() {
     return (
-      <div>
-        <AddPlayer
-          removePlayer = { removePlayer.bind(this) }
-          addPlayer = { addPlayer.bind(this) }
-        />
-
-        <form onSubmit={(e) => {e.preventDefault(); }}>
-
-          <AddPlayerTagList
-            players={this.props.players}
-            onChangeHandler = { onChangeHandler.bind(this) }
-          />
-          {console.log(this.props.players)}
-          <Link to="/Stats">
-            <input type="submit" name="nametag" required />
-          </Link>
-        </form>
+      <div >
+        <Header />
+        <div className="d-flex flex-column justify-content-center align-items-center content">
+          <span>
+            Compare tes stats !
+          </span>
+          <form className="text-center" onSubmit={(e) => {e.preventDefault(); }}>
+            <AddPlayerTagList
+              players={this.props.players}
+              onChangeHandler = { onChangeHandler.bind(this) }
+            />
+            {console.log(this.props.players)}
+            <AddPlayer
+              removePlayer = { removePlayer.bind(this) }
+              addPlayer = { addPlayer.bind(this) }
+            />
+            <Link to="/Stats">
+              <input type="submit" name="nametag" value="Versus !" required />
+            </Link>
+          </form>
+        </div>
+        <Footer />
       </div>
     );
   }
