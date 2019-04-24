@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Chart from "react-apexcharts";
+
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU0MiwiaWRlbiI6IjIxMTEyODAyNTQxMDk2MTQxMCIsIm1kIjp7fSwidHMiOjE1NTYwMjQ1Njc2MDl9.a1Dd43GVTcwJhuhtyqIHH5jKPNaIBBnlsriA40d5xjk'
-let fetchedData 
+let fetchedData
 
+class Stat extends Component {
 
-class Stat extends Component {	
-	
 
 componentDidMount(){
 	fetch('https://api.royaleapi.com/player/QGUPYVY9,P9VCCCJJ2', {
@@ -15,12 +16,12 @@ componentDidMount(){
 	.then(result =>{
 		return result.json()
 	})
-	.then(data =>{	
+	.then(data =>{
 		fetchedData = data
 		console.log(fetchedData)
 	})
 }
-	
+
 render() {
 	return (
 		<div>
@@ -29,8 +30,8 @@ render() {
 		</div>
 	)
 }
-	
-	
+
+
 }
 
 const mapStateToProps = (state) => {
