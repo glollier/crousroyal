@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Chart from "react-apexcharts";
+import { addDatas } from '../actions/playerManager'
 
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU0MiwiaWRlbiI6IjIxMTEyODAyNTQxMDk2MTQxMCIsIm1kIjp7fSwidHMiOjE1NTYwMjQ1Njc2MDl9.a1Dd43GVTcwJhuhtyqIHH5jKPNaIBBnlsriA40d5xjk'
 let fetchedData
@@ -19,6 +20,7 @@ componentDidMount(){
 	.then(data =>{
 		fetchedData = data
 		console.log(fetchedData)
+		fetchedData.map(player => addDatas.bind(this)(player))
 	})
 }
 
@@ -26,6 +28,7 @@ render() {
 	return (
 		<div>
 		{"Stat.js"}
+		{console.log(this.props.players)}
 		<div><pre>{JSON.stringify(fetchedData, null, 2) }</pre></div>
 		</div>
 	)

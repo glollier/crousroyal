@@ -7,3 +7,6 @@ export function removePlayer(key) {
 export function onChangeHandler(props){
   this.props.dispatch({ type: "CHANGE_PLAYER_TAG", props })
 }
+export function addDatas(props){
+  this.props.dispatch({ type: "ADD_DATAS", props })
+}
