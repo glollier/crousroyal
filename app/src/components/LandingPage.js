@@ -1,15 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import AddPlayerTagList from './vues/AddPlayerTagList';
-import {addPlayer, removePlayer, onChangeHandler, setRequest} from '../actions/playerManager'
+import {addPlayer, removePlayer, onChangeHandler, setRequest, addDatas, setPlayers} from '../actions/playerManager'
 import AddPlayer from './vues/AddPlayer';
-import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/LandingPage.css';
 import Header from './vues/Header'
 import Footer from './vues/Footer'
 
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU0MiwiaWRlbiI6IjIxMTEyODAyNTQxMDk2MTQxMCIsIm1kIjp7fSwidHMiOjE1NTYwMjQ1Njc2MDl9.a1Dd43GVTcwJhuhtyqIHH5jKPNaIBBnlsriA40d5xjk'
+let fetchedData
+
 class LandingPage extends Component {
+  fetcher(){
+		let toFetch = 'https://api.royaleapi.com/player/' + this.props.request
+		fetch(toFetch, {
+			headers:{
+				'auth' : token
+			}})
+		.then(result =>{
+			return result.json()
+		})
+		.then(data =>{
+			fetchedData = data
+			fetchedData.map(player => addDatas.bind(this)(player))
+		})
+	}
+  setDatas(){
+    fetch('https://api.royaleapi.com/player/QGUPYVY9,P9VCCCJJ2', {
+      headers:{
+        'auth' : token
+      }})
+    .then(result =>{
+      return result.json()
+    })
+    .then(data =>{
+      fetchedData = data
+      fetchedData.map(player => addDatas.bind(this)(player))
+
+    })
+  }
   render() {
     return (
       <div >
@@ -18,7 +48,8 @@ class LandingPage extends Component {
           <span>
             Compare tes stats !
           </span>
-          <form className="text-center" onSubmit={(e) => {e.preventDefault();} }>
+
+          <form className="text-center" onClick={(e) => e.preventDefault()}>
             <AddPlayerTagList
               players={this.props.players}
               removePlayer = { removePlayer.bind(this) }
@@ -28,9 +59,26 @@ class LandingPage extends Component {
               addPlayer = { addPlayer.bind(this) }
             />
             {setRequest.bind(this)()}
-            <Link className="versus" to="/Stats">
-              <input type="submit" name="nametag" value="Versus !" required />
-            </Link>
+            <button className="versus" onClick={(e) => {
+              this.fetcher();
+              setTimeout(() => {
+                this.props.history.push('/Stats')
+              }, 1000);
+            }}>
+              Versus !
+            </button>
+
+            <div><button className="versus" onClick={(e) => {
+              setPlayers.bind(this)();
+              setTimeout(() => {
+                  this.setDatas()
+              }, 100);
+              setTimeout(() => {
+                this.props.history.push('/Stats')
+              }, 1500);
+            }}>
+              Setup Rapide
+            </button></div>
           </form>
         </div>
         <Footer />

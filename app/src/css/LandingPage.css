@@ -54,7 +54,7 @@ h1 {
 h1 span {
 	color:#ffe16b;
 }
-input[type="submit"], input[type="text"]{
+.versus, input[type="text"]{
 	border:none;
 	height: 50px;
 	padding: 0px 20px;
@@ -70,7 +70,7 @@ input[type="text"]::placeholder {
 	color: rgba(255, 255, 255, 0.13);
 }
 
-input[type="submit"] {
+.versus {
 	font-family: Supercell-magic;
 	border-radius: 5px;
 	background-color: #43db68;
@@ -78,7 +78,7 @@ input[type="submit"] {
 	margin-top: 50px;
 }
 
-input[type="submit"]:hover {
+.versus:hover {
 	background-color:#f077f4;
 }
 

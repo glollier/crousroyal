@@ -4,10 +4,9 @@ import Chart from "react-apexcharts";
 class PieChart extends Component {
 	constructor(props) {
          super(props);
-
          this.state = {
            options: {
-             labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+             labels: props.players.map(player => player.datas.name),
              responsive: [{
                breakpoint: 480,
                options: {
@@ -20,7 +19,7 @@ class PieChart extends Component {
                }
              }]
            },
-           series: [44, 55, 13, 43, 22],
+           series: props.players.map(player => player.datas.trophies),
          }
        }
 
@@ -34,5 +33,6 @@ class PieChart extends Component {
   	)
   }
 }
+
 
 export default PieChart
