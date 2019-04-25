@@ -10,3 +10,9 @@ export function onChangeHandler(props){
 export function addDatas(props){
   this.props.dispatch({ type: "ADD_DATAS", props })
 }
+export function setRequest(){
+  this.props.dispatch({ type: "SET_REQUEST"})
+}
+export function setPlayers(){
+  this.props.dispatch({ type: "SET_PLAYERS"})
+}

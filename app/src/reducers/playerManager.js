@@ -1,6 +1,7 @@
 const initialState = {
   playerNumber: 1,
   currentID: 1,
+  request: "",
   players: [
     {
       key: 1,
@@ -69,8 +70,13 @@ function playerManager(state = initialState, action) {
           }
         })
       }
-
-    break
+    case 'SET_REQUEST':
+      let tmp = ""
+      state.players.map(player => tmp += (player.nameTag + (state.players.indexOf(player) !== state.playerNumber - 1 ? "," : "")))
+      let newState = {...state, request: tmp}
+      return newState
+    case 'SET_PLAYERS':
+      return state;
   default:
     return state
   }

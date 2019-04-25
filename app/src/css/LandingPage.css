@@ -10,7 +10,7 @@ html, body, #root, #root>div {
 .content {
 	overflow: hidden;
 	font-family: Supercell-magic;
-	height:calc(100% - 100px);
+	height:calc(100% - 180px);
 	background-image: url('../img/bg-landing.png');
 	min-height:800px;
 }
