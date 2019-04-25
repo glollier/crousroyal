@@ -76,7 +76,21 @@ function playerManager(state = initialState, action) {
       let newState = {...state, request: tmp}
       return newState
     case 'SET_PLAYERS':
-      return state;
+      return {
+        ...state,
+        players: [
+          {
+            key: 1,
+            nameTag: "QGUPYVY9",
+            datas: {}
+          },
+          {
+            key: 2,
+            nameTag: "P9VCCCJJ2",
+            datas: {}
+          }
+        ]
+      }
   default:
     return state
   }

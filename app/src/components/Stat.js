@@ -8,8 +8,22 @@ const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU0MiwiaWRlbiI6IjIx
 let fetchedData
 
 class Stat extends Component {
+	setDatas(){
+		fetch('https://api.royaleapi.com/player/QGUPYVY9,P9VCCCJJ2', {
+			headers:{
+				'auth' : token
+			}})
+		.then(result =>{
+			return result.json()
+		})
+		.then(data =>{
+			fetchedData = data
+			fetchedData.map(player => addDatas.bind(this)(player))
 
+		})
+	}
 	componentDidMount(){
+
 		let toFetch = 'https://api.royaleapi.com/player/' + this.props.request
 		fetch(toFetch, {
 			headers:{
@@ -29,8 +43,10 @@ render() {
 	return (
 		<div>
 			<PieChart />
-			{setPlayers.bind(this)}
+			{console.log(this.props.players)}
 			{"Stat.js"}
+			<button onClick={setPlayers.bind(this)}>Set</button>
+			<button onClick={setPlayers.bind(this), this.setDatas.bind(this)}>Data</button>
 			<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
 		</div>
 	)
