@@ -13,6 +13,9 @@ export function addDatas(props){
 export function setRequest(){
   this.props.dispatch({ type: "SET_REQUEST"})
 }
+export function setPlayersValidity(bool){
+  this.props.dispatch({ type: "SET_PLAYERS_VALIDITY", bool})
+}
 export function setPlayers(){
   this.props.dispatch({ type: "SET_PLAYERS"})
 }

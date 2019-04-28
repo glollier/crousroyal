@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import AddPlayerTagList from './vues/AddPlayerTagList';
-import {addPlayer, removePlayer, onChangeHandler, setRequest, addDatas, setPlayers} from '../actions/playerManager'
+import {addPlayer, removePlayer, onChangeHandler, setRequest, addDatas, setPlayers, setPlayersValidity} from '../actions/playerManager'
 import AddPlayer from './vues/AddPlayer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/LandingPage.css';
@@ -19,12 +19,21 @@ class LandingPage extends Component {
 				'auth' : token
 			}})
 		.then(result =>{
+      if (!result.ok) {
+          throw Error(result.statusText);
+      }
 			return result.json()
 		})
 		.then(data =>{
+      setTimeout(() => {
+          setPlayersValidity.bind(this)(true)
+      }, 50);
 			fetchedData = data
 			fetchedData.map(player => addDatas.bind(this)(player))
 		})
+    .catch(() => {
+        setPlayersValidity.bind(this)(false)
+    })
 	}
   setDatas(){
     fetch('https://api.royaleapi.com/player/QGUPYVY9,P9VCCCJJ2', {
@@ -35,9 +44,11 @@ class LandingPage extends Component {
       return result.json()
     })
     .then(data =>{
+      setTimeout(() => {
+          setPlayersValidity.bind(this)(true)
+      }, 50);
       fetchedData = data
       fetchedData.map(player => addDatas.bind(this)(player))
-
     })
   }
   render() {
@@ -59,6 +70,7 @@ class LandingPage extends Component {
               addPlayer = { addPlayer.bind(this) }
             />
             {setRequest.bind(this)()}
+            {this.props.displayError ? <div className="ErrorMessage">Les NameTags ne sont pas valides !</div> : null}
             <button className="versus" onClick={(e) => {
               this.fetcher();
               setTimeout(() => {
@@ -67,7 +79,6 @@ class LandingPage extends Component {
             }}>
               Versus !
             </button>
-
             <div><button className="versus" onClick={(e) => {
               setPlayers.bind(this)();
               setTimeout(() => {
