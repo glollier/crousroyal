@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Chart from "react-apexcharts";
-import PieChart from './vues/PieChart'
+import DonutChart from './vues/DonutChart'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Stat.css';
 import Header from './vues/Header'
 import Footer from './vues/Footer'
+import VersusDisplayer from './vues/VersusDisplayer'
 import { Redirect} from 'react-router-dom'
 
 class Stat extends Component {
@@ -15,8 +16,23 @@ render() {
 		? (
 				<div>
 					<Header />
-					<PieChart players={this.props.players}/>
-					{"Stat.js"}
+					<div className="statsContent">
+						<div className="statsContainer">
+							<VersusDisplayer players={this.props.players}/>
+						</div>
+						<div className="statsContainer">
+							{
+								this.props.players.map(player =>
+								<DonutChart
+									key={player.datas.name}
+									Wins={player.datas.games.wins}
+									Losses={player.datas.games.losses}
+									Draws={player.datas.games.draws}
+									playerName={player.datas.name}
+								/>)
+							}
+						</div>
+					</div>
 					<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
 					<Footer />
 				</div>

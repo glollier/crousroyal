@@ -1,0 +1,55 @@
+.statsContent {
+  background-color: #383658;
+  padding:10px 0px;
+}
+
+.statsContainer {
+  background-color: #312b41;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px #171717;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin:15px 10px;
+}
+
+.donutChart {
+  margin-top: 50px;
+}
+
+.donutChart .pseudo {
+  text-align: center;
+  font-family: Supercell-magic;
+}
+
+.versusContainer {
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:30px;
+}
+
+.player {
+  text-align: center;
+  font-family: Supercell-magic;
+  font-size: 15px;
+  padding:20px;
+  width:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Supercell-magic;
+  font-size: 20px;
+  color:#fc00f4;
+}
