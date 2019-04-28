@@ -70,12 +70,17 @@ input[type="text"]::placeholder {
 	color: rgba(255, 255, 255, 0.13);
 }
 
+.ErrorMessage {
+	color:#ff2b68;
+	margin-top:30px;
+}
+
 .versus {
 	font-family: Supercell-magic;
 	border-radius: 5px;
 	background-color: #43db68;
 	width: 150px;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 .versus:hover {

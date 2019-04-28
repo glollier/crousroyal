@@ -6,17 +6,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Stat.css';
 import Header from './vues/Header'
 import Footer from './vues/Footer'
+import { Redirect} from 'react-router-dom'
 
 class Stat extends Component {
 render() {
 	return (
-		<div>
-			<Header />
-			<PieChart players={this.props.players}/>
-			{"Stat.js"}
-			<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
-			<Footer />
-		</div>
+		this.props.playersAreValid
+		? (
+				<div>
+					<Header />
+					<PieChart players={this.props.players}/>
+					{"Stat.js"}
+					<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
+					<Footer />
+				</div>
+			)
+		: <Redirect to="/" />
 	)
 }
 

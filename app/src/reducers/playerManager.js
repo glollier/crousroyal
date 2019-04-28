@@ -2,6 +2,8 @@ const initialState = {
   playerNumber: 1,
   currentID: 1,
   request: "",
+  playersAreValid: false,
+  displayError: false,
   players: [
     {
       key: 1,
@@ -91,6 +93,12 @@ function playerManager(state = initialState, action) {
           }
         ]
       }
+      case 'SET_PLAYERS_VALIDITY':
+        return {
+          ...state,
+          displayError: !action.bool,
+          playersAreValid: action.bool
+        }
   default:
     return state
   }
