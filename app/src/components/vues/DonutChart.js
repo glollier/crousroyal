@@ -11,16 +11,14 @@ class DonutChart extends Component {
 							 show:false,
 						 }
 					 },
-
-
            series: this.seriesCreator.bind(this)(this.props),
          }
        }
 			 seriesCreator(props){
 				 let tab = []
-				 Object.keys(props).map(function(key, index) {
+				 Object.keys(props).map((key, index) => {
 					  tab.push(props[key])
-					});
+					})
 					tab.splice(-1,1)
 					return tab
 			 }

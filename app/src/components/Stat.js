@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Chart from "react-apexcharts";
 import DonutChart from './vues/DonutChart'
+import StackedBar from './vues/StackedBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Stat.css';
 import Header from './vues/Header'
@@ -32,7 +32,13 @@ render() {
 								/>)
 							}
 						</div>
+						<div className="statsContainer">
+								<StackedBar
+									players={this.props.players}
+								/>
+						</div>
 					</div>
+
 					<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
 					<Footer />
 				</div>
