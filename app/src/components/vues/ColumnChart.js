@@ -3,33 +3,62 @@ import Chart from "react-apexcharts";
 
 class ColumnChart extends Component {
 	constructor(props) {
-		console.log(props.players.map(player => player.datas.trophies))
-         super(props);
-         this.state = {
-           options: {
-             labels: props.players.map(player => player.datas.name),
-             responsive: [{
-               breakpoint: 480,
-               options: {
-                 chart: {
-                   width: 200
-                 },
-                 legend: {
-                   position: 'bottom'
-                 }
-               }
-             }]
-           },
-           series: props.players.map(player => player.datas.trophies),
-         }
-       }
+		
+        super(props);
+        this.state = {
+			options: {
+				 chart: {
+						height: 500,
+						type: 'bar',
+					  	foreColor: '#ffffff'
+					},
+					plotOptions: {
+						bar: {
+							horizontal: false,
+							columnWidth: '55%',
+							endingShape: 'rounded'	
+						},
+					},
+					dataLabels: {
+						enabled: false
+					},
+					stroke: {
+						show: true,
+						width: 2,
+						colors: ['transparent']
+					}
+
+				},
+				series: [{
+						name: 'Pseudo',
+						data: [44,]
+					},{
+						name: 'Rocco',
+						data: [58,]
+					}
+				],
+				dataLabels: {
+				  style: {
+					colors: ['#F44336', '#E91E63', '#9C27B0']
+				  }
+				},
+				grid: {
+				  row: {
+					colors: ['#F44336', '#E91E63', '#9C27B0']
+				  },
+				  column: {
+					colors: ['#F44336', '#E91E63', '#9C27B0']
+				  }
+				}
+		}
+	}
 	
 
   render() {
   	return (
   		<div>
-  		  <div id="trophies">
-  				<Chart options={this.state.options} series={this.state.series}  type="bar" width="380" />
+  		  <div className="barChart d-flex justify-content-center align-items-center">
+  				<Chart options={this.state.options} series={this.state.series}  type="bar" width="400px" height="400px" />
 			
   			</div>
   		</div>
