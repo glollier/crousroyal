@@ -7,6 +7,8 @@
 	margin:auto;
 	margin-top:20px;
 	text-align:center;
+	font-family: Supercell-magic;
+	font-size:1rem;
 }
 .statsContent {
 	background-color: #383658;
@@ -18,6 +20,7 @@
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
+	font-size: 1rem;
 }
 
 .donutChart {
@@ -41,7 +44,6 @@
 .player {
 	text-align: center;
 	font-family: Supercell-magic;
-	font-size: 15px;
 	padding:20px;
 	width:50%;
 	display: flex;

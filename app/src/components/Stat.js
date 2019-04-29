@@ -51,10 +51,12 @@ render() {
 						<div className="item"> 			
 							<div className="titreSection">Nombre de trophées</div>
 							<div className="statsContainer">
-
+									{
 									<ColumnChart 
-										players={this.props.players}
+										trophies={this.props.players.map(player => player.datas.trophies )}
+										playerName={this.props.players.map(player => player.datas.name)}
 									/>
+									}
 							</div>
 						</div>
 					</div>

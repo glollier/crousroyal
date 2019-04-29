@@ -15,7 +15,7 @@ class ColumnChart extends Component {
 					plotOptions: {
 						bar: {
 							horizontal: false,
-							columnWidth: '55%',
+							columnWidth: '20%',
 							endingShape: 'rounded'	
 						},
 					},
@@ -29,30 +29,24 @@ class ColumnChart extends Component {
 					}
 
 				},
-				series: [{
-						name: 'Pseudo',
-						data: [44,]
-					},{
-						name: 'Rocco',
-						data: [58,]
-					}
-				],
-				dataLabels: {
-				  style: {
-					colors: ['#F44336', '#E91E63', '#9C27B0']
-				  }
-				},
-				grid: {
-				  row: {
-					colors: ['#F44336', '#E91E63', '#9C27B0']
-				  },
-				  column: {
-					colors: ['#F44336', '#E91E63', '#9C27B0']
-				  }
-				}
+				series: this.seriesCreator.bind(this)(this.props),
 		}
 	}
-	
+	seriesCreator(props){
+		let tab = []
+		let temp = []
+		Object.keys(props).map((key, index) => {
+			  tab.push(props[key])
+			})
+		for(let i=0;i<tab[0].length;i++){
+			temp[i] = {
+				name:tab[1][i],
+				data: [tab[0][i]]
+			}
+		}
+		tab = temp
+		return tab
+	}
 
   render() {
   	return (

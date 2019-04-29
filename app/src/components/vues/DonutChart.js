@@ -10,24 +10,24 @@ class DonutChart extends Component {
 				foreColor: '#ffffff'
 			 },
              labels: this.labelCreator.bind(this)(this.props),
-						 legend: {
-							 show:false,
-						 }
-					 },
+			 legend: {
+					 show:false,
+				 }
+		   },
            series: this.seriesCreator.bind(this)(this.props),
          }
        }
-			 seriesCreator(props){
-				 let tab = []
-				 Object.keys(props).map((key, index) => {
-					  tab.push(props[key])
-					})
-					tab.splice(-1,1)
-					return tab
-			 }
-			 labelCreator(props){
-				 return Object.getOwnPropertyNames(props)
-			 }
+	 seriesCreator(props){
+		 let tab = []
+		 Object.keys(props).map((key, index) => {
+			  tab.push(props[key])
+			})
+			tab.splice(-1,1)
+			return tab
+	 }
+	 labelCreator(props){
+		 return Object.getOwnPropertyNames(props)
+	 }
   render() {
   	return (
   		<div className="donutChart d-flex justify-content-center align-items-center">
