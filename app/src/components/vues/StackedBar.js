@@ -11,19 +11,26 @@ class StackedBar extends Component {
               chart: {
                 stacked: true,
                 stackType: '100%',
-				foreColor: '#ffffff'
+				        foreColor: '#ffffff'
+              },
+              yaxis: {
+                forceNiceScale: true
+
+              },
+              tooltip: {
+                fillSeriesColor:true,
               },
               markers: {
                   colors: "['#fff']"
               },
               plotOptions: {
                 bar: {
-                  horizontal: true,
+                  horizontal: false,
                 },
               },
               stroke: {
-                width: 1,
-                colors: "['#fff']"
+                show:false
+
               },
               xaxis: {
                 categories: this.props.players.map( player => player.datas.name),
@@ -33,8 +40,7 @@ class StackedBar extends Component {
               },
               legend: {
                 position: 'top',
-                horizontalAlign: 'left',
-                offsetX: 40
+                horizontalAlign: 'center'
               }
             },
             series: [{
@@ -74,7 +80,7 @@ class StackedBar extends Component {
   	return (
   		<div>
         <div id="chart">
-          <Chart options={this.state.options} series={this.state.series} type="bar" height="350" />
+          <Chart options={this.state.options} series={this.state.series} type="bar" height="400" />
         </div>
       </div>
   	)

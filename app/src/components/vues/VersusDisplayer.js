@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import PlayerName from './PlayerName'
 
 class VersusDisplayer extends Component {
   render() {
   	return (
       <div className="versusContainer">
         {this.props.players.map(player =>
-          <div className="player" key={player.datas.name}>
-            {player.datas.name}
-          </div>
+          <PlayerName
+            key={player.datas.name}
+            playerName={player.datas.name}
+            playerColor={player.color}
+          />
         )}
         <div className="link">
           VS

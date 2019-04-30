@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import AddPlayerTagList from './vues/AddPlayerTagList';
-import {addPlayer, removePlayer, onChangeHandler, setRequest, addDatas, setPlayers, setPlayersValidity} from '../actions/playerManager'
+import {addPlayer, removePlayer, onChangeHandler, setRequest, addDatas, setPlayers, setPlayersColors, setPlayersValidity} from '../actions/playerManager'
 import AddPlayer from './vues/AddPlayer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/LandingPage.css';
@@ -73,6 +73,7 @@ class LandingPage extends Component {
             {this.props.displayError ? <div className="ErrorMessage">Les NameTags ne sont pas valides !</div> : null}
             <button className="versus" onClick={(e) => {
               this.fetcher();
+              setPlayersColors.bind(this)()
               setTimeout(() => {
                 this.props.history.push('/Stats')
               }, 1000);
@@ -80,7 +81,8 @@ class LandingPage extends Component {
               Versus !
             </button>
             <div><button className="versus" onClick={(e) => {
-              setPlayers.bind(this)();
+              setPlayers.bind(this)()
+              setPlayersColors.bind(this)()
               setTimeout(() => {
                   this.setDatas()
               }, 100);
