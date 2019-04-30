@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Chart from "react-apexcharts";
 import ColumnChart from './vues/ColumnChart';
-import DonutChart from './vues/DonutChart'
+import WinratePieList from './vues/WinratePieList'
 import StackedBar from './vues/StackedBar'
-import FavoriteCard from './vues/FavoriteCard'
+import FavoriteCardList from './vues/FavoriteCardList'
+import CurrentDeckList from './vues/CurrentDeckList'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Stat.css';
 import Header from './vues/Header'
@@ -27,23 +27,13 @@ render() {
 						</div>
 						<div className="item">
 							<div className="titreSection">Winrate</div>
-							<div className="statsContainer">
-									{
-									this.props.players.map(player =>
-									<DonutChart
-										key={player.datas.name}
-										Wins={player.datas.games.wins}
-										Losses={player.datas.games.losses}
-										Draws={player.datas.games.draws}
-										playerName={player.datas.name}
-									/>)
-								}
-							</div>
+							<WinratePieList
+								players={this.props.players}
+							/>
 						</div>
 						<div className="item">
 							<div className="titreSection">Niveau des cartes</div>
 							<div className="statsContainer">
-
 									<StackedBar
 										players={this.props.players}
 									/>
@@ -52,29 +42,29 @@ render() {
 						<div className="item">
 							<div className="titreSection">Nombre de trophées</div>
 							<div className="statsContainer">
-									{
 									<ColumnChart
 										trophies={this.props.players.map(player => player.datas.trophies )}
 										playerName={this.props.players.map(player => player.datas.name)}
 									/>
-									}
 							</div>
 						</div>
 						<div className="item">
 							<div className="titreSection">Carte préférée</div>
 							<div className="statsContainer">
-							{
-								this.props.players.map(player =>
-								<FavoriteCard
-									key={player.datas.name}
-									playerName={player.datas.name}
-									favoriteCard={player.datas.stats.favoriteCard}
-								/>)
-							}
+								<FavoriteCardList
+									players={this.props.players}
+								/>
+							</div>
+						</div>
+						<div className="item">
+							<div className="titreSection">Deck actuel</div>
+							<div className="statsContainer">
+								<CurrentDeckList
+									players={this.props.players}
+								/>
 							</div>
 						</div>
 					</div>
-
 					<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
 					<Footer />
 				</div>

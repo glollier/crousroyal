@@ -8,10 +8,16 @@ const initialState = {
     {
       key: 1,
       nameTag: "",
+      color: "",
       datas:{}
     }
   ]
 }
+
+const COLOR_PLAYER_1 = "#33da5c"
+const COLOR_PLAYER_2 = "#ff6c6c"
+const COLOR_PLAYER_3 = "#4ee7e5"
+const COLOR_PLAYER_4 = "#c400dd"
 
 function playerManager(state = initialState, action) {
   switch (action.type) {
@@ -26,6 +32,7 @@ function playerManager(state = initialState, action) {
             {
               key: state.currentID + 1,
               nameTag: "",
+              color: "",
               datas: {}
             }
           ]
@@ -84,15 +91,48 @@ function playerManager(state = initialState, action) {
           {
             key: 1,
             nameTag: "QGUPYVY9",
+            color:"",
             datas: {}
           },
           {
             key: 2,
             nameTag: "P9VCCCJJ2",
+            color:"",
             datas: {}
           }
         ]
       }
+      case 'SET_PLAYERS_COLORS':
+        return {
+          ...state,
+          players: state.players.map( (player, index) => {
+            if(index === 0){
+              return {
+                ...player,
+                color: COLOR_PLAYER_1
+              }
+            }
+            if(index === 1){
+              return {
+                ...player,
+                color: COLOR_PLAYER_2
+              }
+            }
+            if(index === 2){
+              return {
+                ...player,
+                color: COLOR_PLAYER_3
+              }
+            }
+            if(index === 3){
+              return {
+                ...player,
+                color: COLOR_PLAYER_4
+              }
+            }
+            return player
+          })
+        }
       case 'SET_PLAYERS_VALIDITY':
         return {
           ...state,

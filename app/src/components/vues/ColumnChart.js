@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 
 class ColumnChart extends Component {
 	constructor(props) {
-		
+
         super(props);
         this.state = {
 			options: {
@@ -12,11 +12,22 @@ class ColumnChart extends Component {
 						type: 'bar',
 					  	foreColor: '#ffffff'
 					},
+					xaxis: {
+		        labels: {
+		            show: false,
+							}
+						},
+					tooltip: {
+						fillSeriesColor:true,
+						x:{
+							show:false
+						}
+					},
 					plotOptions: {
 						bar: {
 							horizontal: false,
 							columnWidth: '20%',
-							endingShape: 'rounded'	
+							endingShape: 'rounded'
 						},
 					},
 					dataLabels: {
@@ -36,7 +47,7 @@ class ColumnChart extends Component {
 		let tab = []
 		let temp = []
 		Object.keys(props).map((key, index) => {
-			  tab.push(props[key])
+			  return tab.push(props[key])
 			})
 		for(let i=0;i<tab[0].length;i++){
 			temp[i] = {
@@ -52,8 +63,7 @@ class ColumnChart extends Component {
   	return (
   		<div>
   		  <div className="barChart d-flex justify-content-center align-items-center">
-  				<Chart options={this.state.options} series={this.state.series}  type="bar" width="400px" height="400px" />
-			
+  				<Chart options={this.state.options} series={this.state.series}  type="bar" height="300px" />
   			</div>
   		</div>
   	)

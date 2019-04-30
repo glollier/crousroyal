@@ -19,3 +19,6 @@ export function setPlayersValidity(bool){
 export function setPlayers(){
   this.props.dispatch({ type: "SET_PLAYERS"})
 }
+export function setPlayersColors(){
+  this.props.dispatch({ type: "SET_PLAYERS_COLORS"})
+}

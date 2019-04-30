@@ -15,16 +15,49 @@
 	padding:10px 0px;
 }
 
-.statsContainer {
+.legend {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items: center;
+	font-size: 10px;
+}
+.legendItem {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items: center;
+}
+.legendCircle {
+	height:20px;
+	width:20px;
+	border-radius:100%;
+	border:1px solid white;
+	margin:5px 10px;
+}
+
+.blue {
+	background-color: #008ffb;
+}
+
+.orange {
+	background-color: #feb019;
+}
+
+.green {
+	background-color: #00e396;
+}
+
+.listContainer {
+	width:100%;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	flex-wrap: wrap;
-	font-size: 1rem;
 }
 
 .donutChart {
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 .pseudo {
@@ -43,11 +76,13 @@
 	padding:30px;
 }
 
-.player {
+.versusContainer .pseudo {
 	text-align: center;
 	font-family: Supercell-magic;
 	padding:20px;
+	font-size: 15px;
 	width:50%;
+	margin:0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -89,7 +124,7 @@
 }
 
 .elixir {
-	width:50px;
+	height:50px;
 }
 .elixirValue {
 	position:absolute;
@@ -101,4 +136,35 @@
 .cardName {
 	margin:5px;
 	font-size:12px;
+}
+
+.CurrentDeckContainer {
+	width:85%;
+	margin:0px 0px 20px 0px;
+}
+
+.CardsContainer {
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.CardsContainer .card {
+	height:100px;
+	margin:20px;
+}
+
+.CardsContainer .elixirInfos {
+	top:0px;
+	left:0px;
+}
+
+.CardsContainer .cardName {
+	font-size:10px;
+}
+
+.apexcharts-tooltip-title {
+	margin:0px;
+	color:black;
 }
