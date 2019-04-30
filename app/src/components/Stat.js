@@ -4,6 +4,7 @@ import Chart from "react-apexcharts";
 import ColumnChart from './vues/ColumnChart';
 import DonutChart from './vues/DonutChart'
 import StackedBar from './vues/StackedBar'
+import FavoriteCard from './vues/FavoriteCard'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Stat.css';
 import Header from './vues/Header'
@@ -19,13 +20,13 @@ render() {
 				<div>
 					<Header />
 					<div className="statsContent">
-						<div className="item"> 
+						<div className="item">
 							<div className="statsContainer">
 								<VersusDisplayer players={this.props.players}/>
 							</div>
 						</div>
-						<div className="item"> 
-							<div className="titreSection">Winrate</div>	
+						<div className="item">
+							<div className="titreSection">Winrate</div>
 							<div className="statsContainer">
 									{
 									this.props.players.map(player =>
@@ -36,10 +37,10 @@ render() {
 										Draws={player.datas.games.draws}
 										playerName={player.datas.name}
 									/>)
-								}	
+								}
 							</div>
 						</div>
-						<div className="item"> 
+						<div className="item">
 							<div className="titreSection">Niveau des cartes</div>
 							<div className="statsContainer">
 
@@ -48,15 +49,28 @@ render() {
 									/>
 							</div>
 						</div>
-						<div className="item"> 			
+						<div className="item">
 							<div className="titreSection">Nombre de trophées</div>
 							<div className="statsContainer">
 									{
-									<ColumnChart 
+									<ColumnChart
 										trophies={this.props.players.map(player => player.datas.trophies )}
 										playerName={this.props.players.map(player => player.datas.name)}
 									/>
 									}
+							</div>
+						</div>
+						<div className="item">
+							<div className="titreSection">Carte préférée</div>
+							<div className="statsContainer">
+							{
+								this.props.players.map(player =>
+								<FavoriteCard
+									key={player.datas.name}
+									playerName={player.datas.name}
+									favoriteCard={player.datas.stats.favoriteCard}
+								/>)
+							}
 							</div>
 						</div>
 					</div>

@@ -34,11 +34,13 @@ class DonutChart extends Component {
   render() {
   	return (
   		<div className="donutChart d-flex justify-content-center align-items-center">
-				<div className="pseudo">
-					{this.props.playerName}
-				</div>
 				<div>
-					<Chart options={this.state.options} series={this.state.series} type="donut" width="200px" />
+					<div className="pseudo">
+						{this.props.playerName}
+					</div>
+					<div>
+						<Chart options={this.state.options} series={this.state.series} type="donut" width="200px" />
+					</div>
 				</div>
   		</div>
   	)
