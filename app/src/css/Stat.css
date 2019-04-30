@@ -2,7 +2,7 @@
 	background-color: #312b41;
 	border-radius: 10px;
 	box-shadow: 2px 2px 1px #171717;
-	color: white;	
+	color: white;
 	width:50%;
 	margin:auto;
 	margin-top:20px;
@@ -27,8 +27,10 @@
 	margin-top: 50px;
 }
 
-.donutChart .pseudo {
+.pseudo {
 	text-align: center;
+	margin:15px;
+	font-size: 12px;
 	font-family: Supercell-magic;
 }
 
@@ -64,4 +66,39 @@
 	font-family: Supercell-magic;
 	padding:20px;
 	text-shadow: 2px 2px 0px #000000;
+}
+
+.cardPictureContainer {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cardPicture {
+	position:relative;
+}
+
+.card {
+	height:150px;
+}
+
+.elixirInfos {
+	position:absolute;
+	top:-10px;
+	left:-20px;
+}
+
+.elixir {
+	width:50px;
+}
+.elixirValue {
+	position:absolute;
+	top:15px;
+	left:20px;
+	text-shadow: 2px 2px 0px #000000;
+}
+
+.cardName {
+	margin:5px;
+	font-size:12px;
 }
