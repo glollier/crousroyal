@@ -9,6 +9,9 @@ class DonutChart extends Component {
 			 chart:{
 				foreColor: '#ffffff'
 			 },
+			 stroke:{
+				 show:false
+			 },
              labels: this.labelCreator.bind(this)(this.props),
 			 legend: {
 					 show:false,
