@@ -7,6 +7,12 @@ class DonutChart extends Component {
          super(props);
          this.state = {
            options: {
+			 chart:{
+				foreColor: '#ffffff'
+			 },
+			 stroke:{
+				 show:false
+			 },
              labels: this.labelCreator.bind(this)(this.props),
 			 legend: {
 					 show:false,
