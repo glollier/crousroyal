@@ -7,7 +7,7 @@ class DonutChart extends Component {
          super(props);
          this.state = {
            options: {
-			theme: {
+			 theme: {
 			  monochrome: {
 				enabled: true,
 				color: '#d851b9',

@@ -8,7 +8,6 @@
 	margin:auto;
 	margin-top:20px;
 	text-align:center;
-	font-family: Supercell-magic;
 	font-size:1rem;
 }
 
@@ -36,7 +35,7 @@
 	padding:10px 0px;
 }
 
-.legend  .legendItem, .cardPictureContainer, .link, .versusContainer  {
+.legend  .legendItem, .cardPictureContainer, .link, .versusContainer, .pseudo  {
     display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -81,10 +80,10 @@
 	text-align: center;
 	margin:15px;
 	font-size: 12px;
-	font-family: Supercell-magic;
 }
 .versusContainer, .titreSection, .elixirValue, .cardName, .legendItem, .pseudo {
 	text-shadow: 2px 2px 0px #000000;
+	font-family: Supercell-magic;
 }
 
 .versusContainer {
@@ -95,13 +94,10 @@
 
 .versusContainer .pseudo {
 	text-align: center;
-	font-family: Supercell-magic;
 	padding:20px;
 	font-size: 15px;
 	width:50%;
 	margin:0px;
-	display: flex;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -110,12 +106,10 @@
 }
 
 .link {
-	font-family: Supercell-magic;
 	font-size: 20px;
 	color:#fc00f4;
 }
 .titreSection{
-	font-family: Supercell-magic;
 	padding:20px;
 }
 

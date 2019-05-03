@@ -83,7 +83,7 @@ render() {
 							</div>
 						</div>
 						<div className="item">
-							<div className="titreSection">Nombre de cartes découvertes</div>
+							<div className="titreSection">Cartes de clans collectées</div>
 							<div className="statsContainer">
 								<ColumnChart
 									clanCardsCollected={this.props.players.map(player => player.datas.stats.clanCardsCollected )}
@@ -92,7 +92,7 @@ render() {
 							</div>
 						</div>
 						<div className="item">
-							<div className="titreSection">Cartes de clans collectées</div>
+							<div className="titreSection">Nombre de cartes découvertes</div>
 							<div className="statsContainer">
 								<ColumnChart
 									cardsFound={this.props.players.map(player => player.datas.stats.cardsFound )}
