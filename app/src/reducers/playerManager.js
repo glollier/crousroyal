@@ -40,7 +40,6 @@ function playerManager(state = initialState, action) {
       }
       return state
     case 'DELETE_PLAYER':
-      console.log(action.key)
       if(state.playerNumber > 1){
         return {
             ...state,
@@ -81,12 +80,14 @@ function playerManager(state = initialState, action) {
       }
     case 'SET_REQUEST':
       let tmp = ""
-      state.players.map(player => tmp += (player.nameTag + (state.players.indexOf(player) !== state.playerNumber - 1 ? "," : "")))
+      state.players.map(player => tmp += (player.nameTag + (state.players.indexOf(player) !== state.players.length - 1 ? "," : "")))
       let newState = {...state, request: tmp}
       return newState
     case 'SET_PLAYERS':
       return {
         ...state,
+        currentID: 3,
+        playerNumber: 2,
         players: [
           {
             key: 1,

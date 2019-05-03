@@ -12,9 +12,14 @@ class VersusDisplayer extends Component {
             playerColor={player.color}
           />
         )}
-        <div className="link">
-          VS
-        </div>
+        {
+          this.props.playerNumber > 1
+          ? <div className="link">
+              VS
+            </div>
+          : null
+        }
+
       </div>
   	)
   }

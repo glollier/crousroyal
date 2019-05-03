@@ -26,7 +26,7 @@ class ColumnChart extends Component {
 					plotOptions: {
 						bar: {
 							horizontal: false,
-							columnWidth: '20%',
+							columnWidth: '60%',
 							endingShape: 'rounded'
 						},
 					},

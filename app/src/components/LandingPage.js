@@ -14,7 +14,7 @@ let fetchedData
 class LandingPage extends Component {
   fetcher(){
 		let toFetch = 'https://api.royaleapi.com/player/' + this.props.request
-		fetch(toFetch, {
+    fetch(toFetch, {
 			headers:{
 				'auth' : token
 			}})
@@ -59,7 +59,6 @@ class LandingPage extends Component {
           <span>
             Compare tes stats !
           </span>
-
           <form className="text-center" onClick={(e) => e.preventDefault()}>
             <AddPlayerTagList
               players={this.props.players}

@@ -22,7 +22,7 @@ render() {
 					<div className="statsContent">
 						<div className="item">
 							<div className="statsContainer">
-								<VersusDisplayer players={this.props.players}/>
+								<VersusDisplayer playerNumber={this.props.playerNumber} players={this.props.players}/>
 							</div>
 						</div>
 						<div className="item">
@@ -61,6 +61,15 @@ render() {
 							<div className="statsContainer">
 								<CurrentDeckList
 									players={this.props.players}
+								/>
+							</div>
+						</div>
+						<div className="item">
+							<div className="titreSection">Trois étoiles atteintes</div>
+							<div className="statsContainer">
+								<ColumnChart
+									threeCrownWins={this.props.players.map(player => player.datas.stats.threeCrownWins )}
+									playerName={this.props.players.map(player => player.datas.name)}
 								/>
 							</div>
 						</div>
