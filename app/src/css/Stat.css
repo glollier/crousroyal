@@ -1,5 +1,6 @@
 .item{
-	background-color: #312b41;
+	/*background-color: #312b41;*/
+	background-color:rgba(37,36,43,0.52);
 	border-radius: 10px;
 	width:95%;
 	box-shadow: 2px 2px 1px #171717;
@@ -26,7 +27,8 @@
 }
 
 .statsContent {
-	background-color: #383658;
+	/*background-color: #383658;*/
+	background-image: url('../img/bg-landing.png');
 	padding:10px 0px;
 }
 
@@ -128,6 +130,7 @@
 
 .card {
 	height:150px;
+	background:none;
 }
 
 .elixirInfos {
@@ -149,6 +152,7 @@
 .cardName {
 	margin:5px;
 	font-size:12px;
+	text-shadow: 2px 2px 0px #000000;
 }
 
 .CurrentDeckContainer {
