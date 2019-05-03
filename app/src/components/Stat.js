@@ -52,7 +52,7 @@ render() {
 							<div className="titreSection">Nombre de trophées maximums</div>
 							<div className="statsContainer">
 									<ColumnChart
-										trophies={this.props.players.map(player => player.datas.stats.maxTrophies )}
+										maxTrophies={this.props.players.map(player => player.datas.stats.maxTrophies )}
 										playerName={this.props.players.map(player => player.datas.name)}
 									/>
 							</div>
@@ -83,10 +83,19 @@ render() {
 							</div>
 						</div>
 						<div className="item">
+							<div className="titreSection">Nombre de cartes découvertes</div>
+							<div className="statsContainer">
+								<ColumnChart
+									clanCardsCollected={this.props.players.map(player => player.datas.stats.clanCardsCollected )}
+									playerName={this.props.players.map(player => player.datas.name)}
+								/>
+							</div>
+						</div>
+						<div className="item">
 							<div className="titreSection">Cartes de clans collectées</div>
 							<div className="statsContainer">
 								<ColumnChart
-									threeCrownWins={this.props.players.map(player => player.datas.stats.clanCardsCollected )}
+									cardsFound={this.props.players.map(player => player.datas.stats.cardsFound )}
 									playerName={this.props.players.map(player => player.datas.name)}
 								/>
 							</div>

@@ -18,6 +18,10 @@
 	.item {
 		width:80%;
 	}
+/*	.CardsContainer div{
+		width:25%;
+	peut être fixer le nombre à 4 quand c'est grand ? jsp
+}*/
 }
 
 @media (min-width: 1200px) {
@@ -32,20 +36,19 @@
 	padding:10px 0px;
 }
 
-.legend {
-	display: flex;
+.legend  .legendItem, .cardPictureContainer, .link, .versusContainer  {
+    display: flex;
 	flex-wrap: wrap;
-	justify-content:space-around;
 	align-items: center;
+	justify-content:space-around;
+	
+}
+
+.legend {
 	font-size: 10px;
 	margin-bottom: 20px;
 }
-.legendItem {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content:space-around;
-	align-items: center;
-}
+
 .legendCircle {
 	height:20px;
 	width:20px;
@@ -55,15 +58,15 @@
 }
 
 .blue {
-	background-color: #008ffb;
+	background-color: #d851b9;
 }
 
 .orange {
-	background-color: #feb019;
+	background-color: #e077c8;
 }
 
 .green {
-	background-color: #00e396;
+	background-color: #e99cd7;
 }
 
 .listContainer {
@@ -80,15 +83,14 @@
 	font-size: 12px;
 	font-family: Supercell-magic;
 }
+.versusContainer, .titreSection, .elixirValue, .cardName, .legendItem, .pseudo {
+	text-shadow: 2px 2px 0px #000000;
+}
 
 .versusContainer {
 	width:100%;
-	display:flex;
 	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
 	padding:30px;
-	text-shadow: 2px 2px 0px #000000;
 }
 
 .versusContainer .pseudo {
@@ -103,11 +105,11 @@
 	align-items: center;
 }
 
-.link {
+.link, .elixirInfos, .elixirValue, .return  {
 	position:absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+}
+
+.link {
 	font-family: Supercell-magic;
 	font-size: 20px;
 	color:#fc00f4;
@@ -115,13 +117,9 @@
 .titreSection{
 	font-family: Supercell-magic;
 	padding:20px;
-	text-shadow: 2px 2px 0px #000000;
 }
 
 .cardPictureContainer {
-	display:flex;
-	align-items: center;
-	justify-content: center;
 	margin:10px;
 }
 
@@ -136,7 +134,6 @@
 }
 
 .elixirInfos {
-	position:absolute;
 	top:-10px;
 	left:-10px;
 }
@@ -145,16 +142,13 @@
 	height:30px;
 }
 .elixirValue {
-	position:absolute;
 	top:8px;
 	left:12px;
 	font-size:10px;
-	text-shadow: 2px 2px 0px #000000;
 }
 
 .cardName {
 	font-size:12px;
-	text-shadow: 2px 2px 0px #000000;
 	width:100%;
 	text-align: center;
 }
@@ -190,18 +184,12 @@
 	color:black;
 }
 
-.CardsContainer div{
-/*	width: calc(100%/4);*/
-	text-align: center;
-}
-
 g .apexcharts-pie-series path{
 	stroke:none;
 }
 
 .return {
 	margin:0px 20px;
-	position:absolute;
 	width:30px;
 	cursor:pointer;
 }
