@@ -7,6 +7,14 @@ class ColumnChart extends Component {
         super(props);
         this.state = {
 			options: {
+				theme: {
+				  monochrome: {
+					enabled: true,
+					color: '#d851b9',
+					shadeTo: 'light',
+					shadeIntensity: 0.65
+				  }
+				},
 				 chart: {
 						height: 500,
 						type: 'bar',
