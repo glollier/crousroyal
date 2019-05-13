@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 class AddPlayer extends Component {
   render() {
@@ -11,8 +10,4 @@ class AddPlayer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return state
-}
-
-export default connect(mapStateToProps)(AddPlayer)
+export default AddPlayer
