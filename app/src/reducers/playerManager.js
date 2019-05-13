@@ -41,6 +41,7 @@ function playerManager(state = initialState, action) {
       return state
     case 'DELETE_PLAYER':
       if(state.playerNumber > 1){
+        
         return {
             ...state,
             playerNumber: state.playerNumber - 1,

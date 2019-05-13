@@ -9,7 +9,6 @@ import Header from './vues/Header'
 import Footer from './vues/Footer'
 
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU0MiwiaWRlbiI6IjIxMTEyODAyNTQxMDk2MTQxMCIsIm1kIjp7fSwidHMiOjE1NTYwMjQ1Njc2MDl9.a1Dd43GVTcwJhuhtyqIHH5jKPNaIBBnlsriA40d5xjk'
-let fetchedData
 
 class LandingPage extends Component {
   fetcher(){
@@ -22,17 +21,22 @@ class LandingPage extends Component {
       if (!result.ok) {
           throw Error(result.statusText);
       }
+      else {
+        this.props.setPlayersValidity(true)
+      }
 			return result.json()
 		})
 		.then(data =>{
-      setTimeout(() => {
-          setPlayersValidity.bind(this)(true)
-      }, 50);
-			fetchedData = data
-			fetchedData.map(player => addDatas.bind(this)(player))
+			data.map(player => this.props.addDatas(player))
 		})
+    .then(() => {
+      this.props.setPlayersColors()
+    })
+    .then(() =>{
+      this.props.history.push('/Stats')
+    })
     .catch(() => {
-        setPlayersValidity.bind(this)(false)
+      this.props.setPlayersValidity(false)
     })
 	}
   setDatas(){
@@ -44,11 +48,8 @@ class LandingPage extends Component {
       return result.json()
     })
     .then(data =>{
-      setTimeout(() => {
-          setPlayersValidity.bind(this)(true)
-      }, 50);
-      fetchedData = data
-      fetchedData.map(player => addDatas.bind(this)(player))
+      this.props.setPlayersValidity(true)
+      data.map(player => this.props.addDatas(player))
     })
   }
   render() {
@@ -62,26 +63,25 @@ class LandingPage extends Component {
           <form className="text-center" onClick={(e) => e.preventDefault()}>
             <AddPlayerTagList
               players={this.props.players}
-              removePlayer = { removePlayer.bind(this) }
-              onChangeHandler = { onChangeHandler.bind(this) }
+              removePlayer = { this.props.removePlayer }
+              onChangeHandler = { this.props.onChangeHandler }
             />
             <AddPlayer
-              addPlayer = { addPlayer.bind(this) }
+              addPlayer = { this.props.addPlayer }
             />
-            {setRequest.bind(this)()}
             {this.props.displayError ? <div className="ErrorMessage">Les NameTags ne sont pas valides !</div> : null}
             <button className="versus" onClick={(e) => {
-              this.fetcher();
-              setPlayersColors.bind(this)()
+              this.props.setRequest()
               setTimeout(() => {
-                this.props.history.push('/Stats')
-              }, 1000);
+                this.fetcher()
+              }, 50);
             }}>
               Versus !
             </button>
             <div><button className="versus" onClick={(e) => {
-              setPlayers.bind(this)()
-              setPlayersColors.bind(this)()
+              this.props.setPlayers()
+              this.props.setPlayersColors()
+              this.props.setRequest()
               setTimeout(() => {
                   this.setDatas()
               }, 100);
@@ -103,4 +103,15 @@ const mapStateToProps = (state) => {
   return state
 }
 
-export default connect(mapStateToProps)(LandingPage)
+const mapDispatchToProps = (dispatch) => ({
+  addPlayer: () => dispatch(addPlayer()),
+  setRequest: () => dispatch(setRequest()),
+  removePlayer: (key) => dispatch(removePlayer(key)),
+  onChangeHandler: (props) => dispatch(onChangeHandler(props)),
+  addDatas: (props) => dispatch(addDatas(props)),
+  setPlayersValidity: (bool) => dispatch(setPlayersValidity(bool)),
+  setPlayers: () => dispatch(setPlayers()),
+  setPlayersColors: () => dispatch(setPlayersColors())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage)

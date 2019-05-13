@@ -1,24 +1,24 @@
 export function addPlayer() {
-   this.props.dispatch( { type: "ADD_PLAYER" })
+   return { type: "ADD_PLAYER" }
 }
 export function removePlayer(key) {
-   this.props.dispatch({ type: "DELETE_PLAYER", key })
+   return { type: "DELETE_PLAYER", key }
 }
-export function onChangeHandler(props){
-  this.props.dispatch({ type: "CHANGE_PLAYER_TAG", props })
+export function onChangeHandler(props) {
+  return { type: "CHANGE_PLAYER_TAG", props }
 }
-export function addDatas(props){
-  this.props.dispatch({ type: "ADD_DATAS", props })
+export function addDatas(props) {
+  return { type: "ADD_DATAS", props }
 }
-export function setRequest(){
-  this.props.dispatch({ type: "SET_REQUEST"})
+export function setRequest() {
+  return { type: "SET_REQUEST"}
 }
-export function setPlayersValidity(bool){
-  this.props.dispatch({ type: "SET_PLAYERS_VALIDITY", bool})
+export function setPlayersValidity(bool) {
+  return { type: "SET_PLAYERS_VALIDITY", bool}
 }
-export function setPlayers(){
-  this.props.dispatch({ type: "SET_PLAYERS"})
+export function setPlayers() {
+  return { type: "SET_PLAYERS"}
 }
-export function setPlayersColors(){
-  this.props.dispatch({ type: "SET_PLAYERS_COLORS"})
+export function setPlayersColors() {
+  return { type: "SET_PLAYERS_COLORS"}
 }

@@ -38,7 +38,7 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content:space-around;
-	
+
 }
 
 .legend {
@@ -189,7 +189,6 @@ g .apexcharts-pie-series path{
 .return:hover {
 	width:28px;
 }
-
 .donutChart .apexcharts-datalabel-value {
   
 }
