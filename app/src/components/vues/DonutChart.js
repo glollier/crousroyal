@@ -31,8 +31,21 @@ class DonutChart extends Component {
 				plotOptions: {
 					pie: {
 					  donut: {
-					    size: '50%'
-					  }
+					    size: '50%',
+                        labels :  {
+                          show:true,
+                          name:{
+                            show:true,
+                          },
+                          value:{
+                            show:true,
+                            fontSize:13,
+                          },
+                          total:{
+                            show:true,
+                          }
+                        }
+					  },
 					}
 				},
 				dataLabels: {
