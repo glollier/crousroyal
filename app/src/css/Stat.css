@@ -35,12 +35,18 @@
 	padding:10px 0px;
 }
 
-.legend  .legendItem, .cardPictureContainer, .link, .versusContainer, .pseudo  {
-    display: flex;
+.legend, .cardPictureContainer, .link, .versusContainer, .pseudo  {
+  display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content:space-around;
+}
 
+.legendItem {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content:center;
 }
 
 .legend {
