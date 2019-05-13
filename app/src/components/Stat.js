@@ -20,26 +20,12 @@ render() {
 				<div>
 					<Header />
 					<div className="statsContent">
-						<div className="item">
+						<div className="item versusDisplay">
 							<div className="statsContainer">
 								<VersusDisplayer playerNumber={this.props.playerNumber} players={this.props.players}/>
 							</div>
 						</div>
-						<div className="item">
-							<div className="titreSection">Winrate</div>
-							<WinratePieList
-								players={this.props.players}
-							/>
-						</div>
-						<div className="item">
-							<div className="titreSection">Niveau des cartes</div>
-							<div className="statsContainer">
-									<StackedBar
-										players={this.props.players}
-									/>
-							</div>
-						</div>
-						<div className="item">
+						<div className="item trophiesNumber">
 							<div className="titreSection">Nombre de trophées</div>
 							<div className="statsContainer">
 									<ColumnChart
@@ -48,7 +34,7 @@ render() {
 									/>
 							</div>
 						</div>
-						<div className="item">
+						<div className="item maxTrophies">
 							<div className="titreSection">Nombre de trophées maximums</div>
 							<div className="statsContainer">
 									<ColumnChart
@@ -57,23 +43,15 @@ render() {
 									/>
 							</div>
 						</div>
-						<div className="item">
-							<div className="titreSection">Carte préférée</div>
+						<div className="item cardLevel">
+							<div className="titreSection">Niveau des cartes</div>
 							<div className="statsContainer">
-								<FavoriteCardList
-									players={this.props.players}
-								/>
+									<StackedBar
+										players={this.props.players}
+									/>
 							</div>
 						</div>
-						<div className="item">
-							<div className="titreSection">Deck actuel</div>
-							<div className="statsContainer">
-								<CurrentDeckList
-									players={this.props.players}
-								/>
-							</div>
-						</div>
-						<div className="item">
+						<div className="item threeCrownWins">
 							<div className="titreSection">Combats à trois étoiles gagnés</div>
 							<div className="statsContainer">
 								<ColumnChart
@@ -82,7 +60,7 @@ render() {
 								/>
 							</div>
 						</div>
-						<div className="item">
+						<div className="item clanCardCollected">
 							<div className="titreSection">Cartes de clans collectées</div>
 							<div className="statsContainer">
 								<ColumnChart
@@ -91,7 +69,29 @@ render() {
 								/>
 							</div>
 						</div>
-						<div className="item">
+						<div className="item winrateSection">
+							<div className="titreSection">Winrate</div>
+							<WinratePieList
+								players={this.props.players}
+							/>
+						</div>
+						<div className="item preferedCard">
+							<div className="titreSection">Carte préférée</div>
+							<div className="statsContainer">
+								<FavoriteCardList
+									players={this.props.players}
+								/>
+							</div>
+						</div>
+						<div className="item currentDeck">
+							<div className="titreSection">Deck actuel</div>
+							<div className="statsContainer">
+								<CurrentDeckList
+									players={this.props.players}
+								/>
+							</div>
+						</div>
+						<div className="item cardDiscovered">
 							<div className="titreSection">Nombre de cartes découvertes</div>
 							<div className="statsContainer">
 								<ColumnChart

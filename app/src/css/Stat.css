@@ -1,7 +1,6 @@
 .item{
 	/*background-color: #312b41;*/
 	background-color:rgba(37,36,43,0.52);
-	border-radius: 10px;
 	width:95%;
 	box-shadow: 2px 2px 1px #171717;
 	color: white;
@@ -15,15 +14,40 @@
 	.item {
 		width:80%;
 	}
-/*	.CardsContainer div{
-		width:25%;
-	peut être fixer le nombre à 4 quand c'est grand ? jsp
-}*/
+
 }
 
 @media (min-width: 1200px) {
 	.item {
-		width:50%;
+		margin:0;
+		width:100%;
+		margin-right:10px;
+		margin-left:10px;
+	}
+	.statsContent{
+		display:grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 10px;
+	}
+	.winrateSection{
+		grid-column: 1/4;
+  		grid-row: 3;
+	}
+	.versusDisplay{
+		grid-column: 2/3;
+		grid-row: 1;
+	}
+	.currentDeck{
+		grid-column: 1/4;
+		grid-row:5;
+	}
+	.prefered-card{
+		grid-row:4;
+		grid-column: 1/2;
+	}
+	.cardDiscovered{
+		grid-row:4;
+		grid-column: 3/4;
 	}
 }
 
@@ -34,7 +58,7 @@
 }
 
 .legend  .legendItem, .cardPictureContainer, .link, .versusContainer, .pseudo  {
-    display: flex;
+	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content:space-around;
@@ -190,5 +214,5 @@ g .apexcharts-pie-series path{
 	width:28px;
 }
 .donutChart .apexcharts-datalabel-value {
-  
+
 }
