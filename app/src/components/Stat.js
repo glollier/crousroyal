@@ -83,14 +83,6 @@ render() {
 								/>
 							</div>
 						</div>
-						<div className="item currentDeck">
-							<div className="titreSection">Deck actuel</div>
-							<div className="statsContainer">
-								<CurrentDeckList
-									players={this.props.players}
-								/>
-							</div>
-						</div>
 						<div className="item cardDiscovered">
 							<div className="titreSection">Nombre de cartes découvertes</div>
 							<div className="statsContainer">
@@ -100,8 +92,24 @@ render() {
 								/>
 							</div>
 						</div>
+						<div className="item challengeMaxWin">
+							<div className="titreSection">Nombre de victoires maximales dans un challenge</div>
+							<div className="statsContainer">
+								<ColumnChart
+									cardsFound={this.props.players.map(player => player.datas.stats.challengeMaxWins )}
+									playerName={this.props.players.map(player => player.datas.name)}
+								/>
+							</div>
+						</div>
+						<div className="item currentDeck">
+							<div className="titreSection">Deck actuel</div>
+							<div className="statsContainer">
+								<CurrentDeckList
+									players={this.props.players}
+								/>
+							</div>
+						</div>
 					</div>
-					<div><pre>{JSON.stringify(this.props.players, null, 2) }</pre></div>
 					<Footer />
 				</div>
 			)
