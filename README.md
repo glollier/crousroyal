@@ -15,3 +15,8 @@ npm install && run start
 
 ## How to use 
 Simply get your ID in game by checking your profile, write it in the specified fields and here you go ! 
+
+## Live version
+
+You can find a live version right here
+[http://crousroyale.herokuapp.com](http://crousroyale.herokuapp.com)
