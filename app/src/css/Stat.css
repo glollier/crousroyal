@@ -57,11 +57,15 @@
 	padding:10px 0px;
 }
 
-.legend  .legendItem, .cardPictureContainer, .link, .versusContainer, .pseudo  {
+.cardPictureContainer, .link, .versusContainer, .pseudo, .versusDisplay  {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content:space-around;
+}
+
+.legend  .legendItem {
+	justify-content:center;
 }
 
 .legendItem {
